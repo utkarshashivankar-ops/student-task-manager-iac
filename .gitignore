@@ -1,0 +1,24 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfplan
+tfplan
+
+# Variable files that may hold real values / secrets
+terraform.tfvars
+*.auto.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+
+# Secrets
+.env
+.env.*
+*.pem
+
+# OS / editor
+.DS_Store
+.vscode/

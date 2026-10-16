@@ -1,0 +1,8 @@
+# Copy to terraform.tfvars (git-ignored) and fill in your values.
+# Do NOT put the API token in this file - use the CLOUDFLARE_API_TOKEN env variable.
+
+account_id        = "your-32-character-cloudflare-account-id"
+worker_name       = "student-task-manager"
+kv_namespace_name = "student_tasks"
+environment       = "dev"
+workers_subdomain = "your-account-subdomain"

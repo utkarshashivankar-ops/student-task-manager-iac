@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Task Manager</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Student Task Manager</h1>
+    <span class="env-badge" title="Configured by Terraform">env: {{ENVIRONMENT}}</span>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Add a task</h2>
+      <form id="task-form" autocomplete="off">
+        <label class="grow">Task title
+          <input id="title" type="text" maxlength="200" placeholder="e.g. Submit Cloud Computing Assignment" required />
+        </label>
+        <label>Priority
+          <select id="priority">
+            <option>High</option>
+            <option selected>Medium</option>
+            <option>Low</option>
+          </select>
+        </label>
+        <label>Status
+          <select id="status">
+            <option selected>Pending</option>
+            <option>In Progress</option>
+            <option>Completed</option>
+          </select>
+        </label>
+        <button type="submit">Add task</button>
+      </form>
+      <p id="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="card">
+      <div class="list-head">
+        <h2>Tasks</h2>
+        <div class="stats" id="stats"></div>
+      </div>
+      <div class="filters">
+        <input id="search" type="search" placeholder="Search tasks..." />
+        <select id="filter-status">
+          <option value="">All statuses</option>
+          <option>Pending</option>
+          <option>In Progress</option>
+          <option>Completed</option>
+        </select>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>ID</th><th>Task</th><th>Priority</th><th>Status</th><th>Created</th><th></th></tr>
+          </thead>
+          <tbody id="task-body"></tbody>
+        </table>
+      </div>
+      <p id="empty" class="empty" hidden>No tasks yet. Add your first one above.</p>
+    </section>
+  </main>
+
+  <script src="/script.js"></script>
+</body>
+</html>
